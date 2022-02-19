@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+    
+      <div class="col-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Categorie</th>
+              <th scope="col">Tel</th>
+              <th scope="col">Mail</th>
+              <th scope="col">image</th>
+              <th scope="col">CV</th>
+  
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of instructor;index as index">
+              <th scope="row">{{index+1}}</th>
+              <td>{{i.nomFormateur}}</td>
+              <td>{{i.categorieFormation}}</td>
+              <td><a href="tel:+216{{i.telephoneInstructor}}">{{i.TelFormateur}}</a> </td>
+              <td><a href="mailto:{{i.instructorMail}}">{{i.emailFormateur}}</a></td>
+              <td>{{i.imageFormateur}}</td>
+              <td>{{i.cvFormateur}}</td>
+              <td>
+                <button class="waves-light btn btn-sm btn-primary" (click)="Ajouter(i.idFormateur)"><i class="fa fa-plus"> </i></button>
+                <button type="button" mdbBtn class="waves-light btn btn-sm btn-danger" data-toggle="modal"
+                  data-target="#basicExample" (click)="frame.show()" mdbWavesEffect>
+                  <i class="fa fa-trash"> </i>
+                </button>
+                <!--Confirmer supprimer-->
+                <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+                  aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+                    <div class="modal-content text-center">
+                      <div class="modal-header d-flex justify-content-center">
+                        <p class="heading">Are you sure?</p>
+                      </div>
+                      <div class="modal-body">
+                        <mdb-icon fas icon="bell" size="4x" class="animated rotateIn">
+                        </mdb-icon>
+                      </div>
+                      <div class="modal-footer justify-content-center">
+                        <button mdbBtn color="danger" class="waves-effect" mdbWavesEffect
+                          (click)="Supprimer(i.idFormateur)">
+                          Yes
+                        </button>
+                        <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect data-dismiss="modal"
+                          (click)="frame.hide()">
+                          No
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

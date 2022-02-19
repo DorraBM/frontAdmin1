@@ -1,0 +1,64 @@
+<div class="container" >
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-center">Ajouter Blog</h2>
+            <form (ngSubmit)="onSubmit()" [formGroup]="blogForm">
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Titre Blog</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" formControlName="titreBlog">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Auteur</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" formControlName="auteurBlog">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Date</label>
+                    <div class="col-sm-8">
+                        <input type="date" class="form-control" formControlName="dateBlog">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-8">
+                        <textarea type="text" class="form-control" formControlName="descriptionBlog" style="height: 80px;"></textarea>
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Contenue</label>
+                    <div class="col-sm-8">
+                        <textarea type="text" class="form-control" formControlName="contenueBlog" style="height: 80px;"></textarea>
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Categorie</label>
+                    <div class="col-sm-8">
+                        <select  formControlName="categorieBlog" class="form-control">
+                            <option [value]="c.nomCategorie" *ngFor="let c of categorieData">
+                                {{c.nomCategorie}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Image Blog</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" formControlName="imageBlog">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Image Auteur</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" formControlName="imageAuteur">
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-success text-center">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

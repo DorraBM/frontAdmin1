@@ -1,0 +1,18 @@
+<div class="container" >
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-center">Ajouter Categorie</h2>
+            <form (ngSubmit)="onSubmit()" [formGroup]="categorieForm">
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Titre Blog</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" formControlName="nomCategorie">
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-success text-center">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

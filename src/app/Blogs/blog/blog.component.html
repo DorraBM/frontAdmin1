@@ -1,0 +1,63 @@
+<div class="container" >
+    <div class="row">
+      <a routerLink="/ajouter-blog"> <button class="btn btn-primary" >Ajouter Blog </button></a>
+        <div class="col-9">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Auteur</th>
+                    <th scope="col">Categorie</th>
+                    <th scope="col">Action</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let b of blog;index as index">
+                    <th scope="row">{{index+1}}</th>
+                    <td>{{b.titreBlog}}</td>
+                    <td>{{b.auteurBlog}}</td>
+                    <td>{{b.categorieBlog}}</td>
+                    <td>
+                        <button class="waves-light btn btn-sm btn-info" (click)="Detail('detail-blog',b.idBlog)" > <i class="fas fa-info-circle " style="color: white;"></i></button>
+                        &nbsp;
+                        <button class="waves-light btn btn-sm btn-success" (click)="Modifier('modifier-blog',b.idBlog)" > <i class="fa fa-pencil"></i></button>
+                        &nbsp;
+                        <button type="button" mdbBtn class="waves-light btn btn-sm btn-danger" data-toggle="modal"
+                        data-target="#basicExample" (click)="frame.show()" mdbWavesEffect>
+                        <i class="fa fa-trash"> </i>
+                      </button>        
+                      <!--Confirmer supprimer-->
+                      <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+                          <div class="modal-content text-center">
+                            <div class="modal-header d-flex justify-content-center">
+                              <p class="heading">Are you sure?</p>
+                            </div>
+                            <div class="modal-body">
+                              <mdb-icon fas icon="bell" size="4x" class="animated rotateIn">
+                              </mdb-icon>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                              <button mdbBtn color="danger" class="waves-effect" mdbWavesEffect
+                                (click)="Supprimer(b.idBlog)">
+                                Yes
+                              </button>
+                              <a type="button" mdbBtn color="danger" class="waves-effect" mdbWavesEffect data-dismiss="modal"
+                                (click)="frame.hide()">
+                                No
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>               
+                    </td>
+                  </tr>
+                
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

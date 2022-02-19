@@ -1,0 +1,107 @@
+<div id="two-columns" class="container" >
+    <div class="row">
+         <!-- content -->
+         <article id="content" class="col-xs-12 col-md-9">
+            <!-- content h1 -->
+            <h1 class="content-h1 fw-semi">{{formationData[0].titreFormation}}</h1>
+            <!-- view header -->
+            <header class="view-header row">
+                <div class="col-xs-12 col-sm-9 d-flex">
+                    <div class="d-col">
+                        <!-- post author -->
+                        <ng-container  *ngFor="let i of instructorData;index as ind">
+                            <div class="post-author" *ngIf="i.idInstructor == formationData[0].idInstructor">
+                                <div class="alignleft no-shrink rounded-circle">
+                                    <img [src]=" instructorData[ind].imageInstructor" class="rounded-circle" alt="image description"   style="height: 35px; width: 35px;">
+                                </div>
+                                <div class="description-wrap">
+                                    <h2 class="author-heading">Instructeur</h2>
+                                    <h3 class="author-heading-subtitle text-uppercase"> {{instructorData[ind].nomInstructor}}</h3>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="d-col">
+                        <!-- post author -->
+                        <div class="post-author">
+                            <div class="alignleft no-shrink icn-wrap">
+                                <i class="far fa-bookmark" style="  color: #ffc000;"></i>
+                            </div>
+                            <div class="description-wrap">
+                                <h2 class="author-heading">Catégorie</h2>
+                                <h3 class="author-heading-subtitle text-uppercase">{{formationData[0].categorieFormation}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <div class="rating-holder">
+                        <ul class="star-rating list-unstyled justify-end">
+                            <li><span class="fas fa-star"><span class="sr-only">star</span></span>
+                            </li>
+                            <li><span class="fas fa-star"><span class="sr-only">star</span></span>
+                            </li>
+                            <li><span class="fas fa-star"><span class="sr-only">star</span></span>
+                            </li>
+                            <li><span class="fas fa-star"><span class="sr-only">star</span></span>
+                            </li>
+                            <li><span class="fas fa-star"><span class="sr-only">star</span></span>
+                            </li>
+                        </ul>
+        
+                    </div>
+                </div>
+            </header>
+            <div class="aligncenter content-aligncenter">
+                <img [src]="formationData[0].image" alt="image description">
+            </div>
+            <h3 class="content-h3">Course Description</h3>
+            <!--<p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of
+                disruptive innovation via workplace diversity and empowerment.</p>
+            <p>Encyclopaedia galactica Orion's sword explorations vanquish the impossible, astonishment radio telescope with pretty stories for which there's little good evidence light years muse about, great turbulent clouds billions upon billions the sky
+                calls to us realm of the galaxies laws of physics globular star cluster. Quasar the only home we've ever known extraordi claims require extraordinary evidence billions upon billions Drake Equation.</p>
+            <h3 class="content-h3">What you will learn</h3>
+            <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of
+                disruptive innovation via workplace diversity and empowerment.</p>
+            <ul class="listDefault list-unstyled">
+                <li>Thomas Edison may have been behind the invention.</li>
+                <li>Edison worked alongside partners, both financial and commercial, to get his best inventions off the ground,</li>
+                <li>Battling challenging cost targets and the need to build.</li>
+            </ul>
+            <p>Quasar the only home we've ever known extraordinary claims require extraordinary evidence billions billions Drake Eqa tion. Stirred by starlight! At the edge of forever. Rich in mystery Sea of Tranquility. Are creatures of the cosmos descend
+                from astronomers. Trillion and billions upon billions upon billions upon billions upon billions. upon billions upon billions!</p>
+            -->
+            {{formationData[0].description}}
+        
+        </article>
+          <!-- sidebar -->
+          <aside class="col-xs-12 col-md-3" id="sidebar">
+            <!-- widget course select -->
+            <section class="widget widget_box widget_course_select">
+                <header class="widgetHead text-center bg-theme">
+                    <a routerLink="/inscription" style="text-decoration: none;">
+                        <h3 class="text-uppercase" style="color: white;">S'inscrire au programme</h3>
+                    </a>
+
+                </header>
+                <strong class="price element-block font-lato " data-label="price:">
+                    {{formationData[0].prixFormation}}DT
+                    <ng-container *ngIf="formationData[0].paiementParMois==1">
+                        /Mois
+     
+                    </ng-container>
+                </strong>
+              
+                <ul class="list-unstyled font-lato">
+                    <li><i class="far fa-user icn no-shrink"></i> {{formationData[0].nbParticipant}}+</li>
+                    <li><i class="far fa-clock icn no-shrink"></i> Durée: {{formationData[0].dureeHeure}}h/{{formationData[0].dureeSemaine}}semaines</li>
+                    <!--<li><i class="fas fa-bullhorn icn no-shrink"></i> Lectures: 10</li>
+                    <li><i class="far fa-play-circle icn no-shrink"></i> Video: 12 hours</li>-->
+                    <li><i class="far fa-address-card icn no-shrink"></i> Certificat agrée par l'état</li>
+                </ul>
+            </section>
+          
+
+        </aside>
+    </div>
+</div>

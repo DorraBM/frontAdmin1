@@ -1,0 +1,108 @@
+
+<div class="container" >
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-center">Ajouter Formation</h2>
+            <form (ngSubmit)="onSubmit()" [formGroup]="formationForm">
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Titre Formation</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control"  formControlName="titreFormation" >
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Prix par mois</label>
+                    <div class="col-sm-8">
+                    
+                      
+                       oui <input  type="radio" name="paiementParMois" id="form11Example4" value="1"  formControlName="paiementParMois">
+                       non<input  type="radio" name="paiementParMois" id="form11Example4" value="0"  formControlName="paiementParMois">
+                      
+                     
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">prix</label>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control"  formControlName="prixFormation">
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Duree par Heure</label>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control" id="inputPassword"  formControlName="dureeHeure">
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Duree par semaine</label>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control"  formControlName="dureeSemaine">
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Formateur</label>
+                    <div class="col-sm-8">
+                    <select  formControlName="idInstructor" class="form-control">
+                      <option [value]="i.idInstructor" *ngFor="let i of instructorData">
+                          {{i.nomInstructor}}
+                      </option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Categorie </label>
+                    <div class="col-sm-8">
+                      <select  formControlName="categorieFormation" class="form-control">
+                          <option [value]="c.nomCategorie" *ngFor="let c of categorieData">
+                              {{c.nomCategorie}}
+                          </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Nombre Participant</label>
+                    <div class="col-sm-8">
+                      <input type="number" class="form-control"  formControlName="nbParticipant">
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">description</label>
+                    <div class="col-sm-8">
+                      <textarea type="text" class="form-control"style="height: 100px;"   formControlName="description"></textarea>
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Programme</label>
+                    <div class="col-sm-8">
+                      <textarea type="text" class="form-control" style="height: 100px;"  formControlName="program"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">nombre etoiles</label>
+                    <div class="col-sm-8">
+                      <input type="number" max="5" class="form-control"  formControlName="nbEtoiles">
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">URL image</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control"  formControlName="image">
+                    </div>
+                  </div>
+                  <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">populaire ou non</label>
+                    <div class="col-sm-8">
+                      
+                        oui <input  type="radio" name="populaire" id="form11Example4" value="1"  formControlName="populaire">
+                        non<input  type="radio" name="populaire" id="form11Example4" value="0"  formControlName="populaire">
+                    </div>
+                  </div>
+                <div>
+                    <button class="btn btn-success text-center">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

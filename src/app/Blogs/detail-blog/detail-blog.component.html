@@ -1,0 +1,56 @@
+
+
+<section class="course-details" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11">
+                <div class="course-details__content">
+                    <p class="course-details__author">
+                        <img [src]="blogData[0].imageAuteur" alt="">
+                        by <a href="" style="text-decoration: none;">{{blogData[0].auteurBlog |titlecase}}</a>
+                    </p><!-- /.course-details__author -->
+
+                    <div class="course-details__top">
+                        <div class="course-details__top-left">
+                            <h2 class="course-details__title">{{blogData[0].titreBlog |titlecase}}</h2>
+                            <!-- /.course-details__title -->
+                           
+                        </div><!-- /.course-details__top-left -->
+                        <div class="course-details__top-right">
+                            <a href="" class="course-one__category" >{{blogData[0].categorieBlog |titlecase}}</a><!-- /.course-one__category -->
+                        </div><!-- /.course-details__top-right -->
+                    </div><!-- /.course-details__top -->
+                    <div class="course-one__image">
+                        <img [src]="blogData[0].imageBlog" alt="">
+                       
+                    </div><!-- /.course-one__image -->
+
+                    <ul class="course-details__tab-navs list-unstyled nav nav-tabs" role="tablist">
+                        <li>
+                            <a class="active" role="tab" data-toggle="tab" href="#description">Description</a>
+                        </li>
+                        <li>
+                            <a class="" role="tab" data-toggle="tab" href="#contenue">Contenue</a>
+                        </li>
+                        
+                    </ul><!-- /.course-details__tab-navs list-unstyled -->
+                    <div class="tab-content course-details__tab-content ">
+                        <div class="tab-pane show active  animated fadeInUp" role="tabpanel" id="description">
+                            <p class="course-details__tab-text">{{blogData[0].descriptionBlog}}</p><!-- /.course-details__tab-text -->
+                            
+                            
+                        </div><!-- /.course-details__tab-content -->
+                        <div class="tab-pane  animated fadeInUp" role="tabpanel" id="contenue">
+                            
+                            <p class="course-details__tab-text">{{blogData[0].contenueBlog}}</p>
+                            <!-- /.course-details__tab-text -->
+                           
+                        </div><!-- /.course-details__tab-content -->
+                        
+                    </div><!-- /.tab-content -->
+                </div><!-- /.course-details__content -->
+            </div><!-- /.col-lg-8 -->
+           
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.course-details -->
